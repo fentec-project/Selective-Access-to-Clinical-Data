@@ -30,5 +30,5 @@ The code will do the following:
 
 An example of decrypted data by the Decryptor 1 is the follow one:
 
-![](C:\Users\A753795\Desktop\access_data_1.png)
+![](./access_data_1.png)
 
