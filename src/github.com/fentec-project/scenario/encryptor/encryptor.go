@@ -1,9 +1,11 @@
 package main
 
 import (
+	"github.com/fentec-project/gofe/abe"
+
 	"encoding/base64"
 	"fmt"
-	"github.com/fentec-project/scenario/abe"
+	"github.com/fentec-project/scenario/adaptor"
 	"github.com/tealeg/xlsx"
 	"io/ioutil"
 )
@@ -69,7 +71,7 @@ func main() {
 				if i == 1 || i == 2 || i == 3 {
 					// encrypt the message msg with the decryption policy specified by the
 					// msp structure
-					abe.Encrypt(path, text, msp)
+					adaptor.Encrypt(path, text, msp)
 					enc_text, _ := ioutil.ReadFile(path + "aux_encrypt.gob")
 					encoded_enc_text := base64.StdEncoding.EncodeToString(enc_text)
 					cell.Value = encoded_enc_text

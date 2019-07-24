@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"encoding/base64"
 	"fmt"
-	"github.com/fentec-project/scenario/abe"
+	"github.com/fentec-project/scenario/adaptor"
 	"github.com/tealeg/xlsx"
 	"io/ioutil"
 	"os"
@@ -72,7 +72,7 @@ func main() {
 					ioutil.WriteFile(path+"aux_encrypt.gob", []byte(enc_text), 0644)
 					// decrypt the ciphertext with the keys of an entity
 					// that has sufficient attributes
-					err := abe.Decrypt(path, keyPath)
+					err := adaptor.Decrypt(path, keyPath)
 					if err != nil {
 						//fmt.Printf("Failed to decrypt: %v\n", err)
 						text := _cell.String()
